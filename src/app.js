@@ -7,6 +7,7 @@ const forecast=require('./utils/forrecast')
 
 
 const app=express()
+const port=process.env.port || 3000
 const publicdir=path.join(__dirname,'../public')
 const viewspath=path.join(__dirname,'../tempelates/views')
 const partialpath=path.join(__dirname,'../tempelates/partials')
@@ -84,6 +85,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log('Server is up and running')
+app.listen(port,()=>{
+    console.log('Server is up and running on '+port)
 })
